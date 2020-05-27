@@ -6,11 +6,11 @@ import AppTab from "./App";
 
 const Routes: React.FC = () => {
 	const Stack = createStackNavigator();
-	const isSigned = false;
+	const isSignedIn = true;
 
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
-			{isSigned ? (
+			{isSignedIn ? (
 				<Stack.Screen name="AppTab" component={AppTab} />
 			) : (
 				<Stack.Screen name="AuthStack" component={AuthStack} />
