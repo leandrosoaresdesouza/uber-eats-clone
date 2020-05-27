@@ -1,10 +1,14 @@
 import React from "react";
-import { View } from "react-native";
+import { Text } from "react-native";
 
-// import { Container } from './styles';
+import { Container } from "./styles";
 
 const Home: React.FC = () => {
-	return <View style={{ backgroundColor: "#000", flex: 1 }} />;
+	return (
+		<Container>
+			<Text>Home</Text>
+		</Container>
+	);
 };
 
 export default Home;
