@@ -30,6 +30,7 @@
 		"react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
 		"import/prefer-default-export": "off",
 		"no-undef": "off",
+		"no-console": ["error", { "allow": ["tron"] }],
 
 		"class-methods-use-this": "off",
 		"@typescript-eslint/camelcase": "off",
