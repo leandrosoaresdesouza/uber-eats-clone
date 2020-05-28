@@ -4,7 +4,7 @@ import { Text } from "react-native";
 import { Container } from "./styles";
 
 interface RestaurantItemProps {
-	data: Restaurant[];
+	data: Restaurant;
 }
 
 interface Restaurant {
@@ -12,10 +12,13 @@ interface Restaurant {
 	name: string;
 }
 
-const RestaurantItem: React.FC<RestaurantItemProps> = () => {
+const RestaurantItem: React.FC<RestaurantItemProps> = ({
+	data: { name, id },
+}) => {
 	return (
 		<Container>
-			<Text>y</Text>
+			<Text>{name}</Text>
+			<Text>{id}</Text>
 		</Container>
 	);
 };

@@ -27,13 +27,14 @@ interface Restaurant {
 }
 
 const Home: React.FC = () => {
-	// const [restaurants, setRestaurants] = useState<Restaurant[]>(fakeData);
+	const [restaurants, setRestaurants] = useState<Restaurant[]>(fakeData);
 
 	return (
 		<Container>
 			<Content title="Special Offers" subtitle="Limited availability">
 				<FlatList
-					data={fakeData}
+					data={restaurants}
+					keyExtractor={(item) => item.id.toString()}
 					renderItem={({ item }) => <RestaurantItem data={item} />}
 				/>
 			</Content>
