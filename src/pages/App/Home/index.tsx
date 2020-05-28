@@ -1,12 +1,42 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useState } from "react";
+import { FlatList } from "react-native";
+
+import Content from "../../../components/Content";
+import RestaurantItem from "../../../components/RestaurantItem";
 
 import { Container } from "./styles";
 
+const fakeData = [
+	{
+		id: 1,
+		name: "x",
+	},
+	{
+		id: 2,
+		name: "y",
+	},
+	{
+		id: 3,
+		name: "z",
+	},
+];
+
+interface Restaurant {
+	id: number;
+	name: string;
+}
+
 const Home: React.FC = () => {
+	// const [restaurants, setRestaurants] = useState<Restaurant[]>(fakeData);
+
 	return (
 		<Container>
-			<Text>Home</Text>
+			<Content title="Special Offers" subtitle="Limited availability">
+				<FlatList
+					data={fakeData}
+					renderItem={({ item }) => <RestaurantItem data={item} />}
+				/>
+			</Content>
 		</Container>
 	);
 };
