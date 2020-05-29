@@ -4,8 +4,10 @@ import { FlatList } from "react-native";
 import Content from "../../../components/Content";
 import RestaurantItem from "../../../components/RestaurantItem";
 import LastItem from "../../../components/LastItem";
+import Swiper from "../../../components/Swiper";
 
 import { Container } from "./styles";
+import { ScrollView } from "react-native-gesture-handler";
 
 const restaurantsData = [
 	{
@@ -68,16 +70,19 @@ const Home: React.FC = () => {
 
 	return (
 		<Container>
-			<Content title="Special Offers" subtitle="Limited availability">
-				<FlatList
-					data={restaurants}
-					horizontal
-					showsHorizontalScrollIndicator={false}
-					keyExtractor={(item) => item.id.toString()}
-					renderItem={({ item }) => <RestaurantItem data={item} />}
-					ListFooterComponent={() => <LastItem />}
-				/>
-			</Content>
+			<ScrollView>
+				<Swiper />
+				<Content title="Special Offers" subtitle="Limited availability">
+					<FlatList
+						data={restaurants}
+						horizontal
+						showsHorizontalScrollIndicator={false}
+						keyExtractor={(item) => item.id.toString()}
+						renderItem={({ item }) => <RestaurantItem data={item} />}
+						ListFooterComponent={() => <LastItem />}
+					/>
+				</Content>
+			</ScrollView>
 		</Container>
 	);
 };

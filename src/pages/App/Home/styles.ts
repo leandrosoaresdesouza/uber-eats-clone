@@ -4,5 +4,5 @@ export const Container = styled.SafeAreaView`
 	flex: 1;
 	align-items: center;
 	justify-content: center;
-	background-color: #fff;
+	background-color: #f1f1f3;
 `;
