@@ -1,7 +1,18 @@
 import React from "react";
-import { Text } from "react-native";
 
-import { Container } from "./styles";
+import {
+	Container,
+	Header,
+	CoverImage,
+	Content,
+	Name,
+	Type,
+	WrapperMiniBox,
+	MiniBox,
+	TimeToDelivery,
+	Rating,
+	Votes,
+} from "./styles";
 
 interface RestaurantItemProps {
 	data: Restaurant;
@@ -17,8 +28,20 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({
 }) => {
 	return (
 		<Container>
-			<Text>{name}</Text>
-			<Text>{id}</Text>
+			<Header>{/* <CoverImage /> */}</Header>
+			<Content>
+				<Name numberOfLines={1}>Popeyes - Shopping Campinas</Name>
+				<Type>Fast Food, Burgers</Type>
+				<WrapperMiniBox>
+					<MiniBox>
+						<TimeToDelivery>30-40 Min</TimeToDelivery>
+					</MiniBox>
+					<MiniBox>
+						<Rating>4.7</Rating>
+						<Votes>(457)</Votes>
+					</MiniBox>
+				</WrapperMiniBox>
+			</Content>
 		</Container>
 	);
 };
