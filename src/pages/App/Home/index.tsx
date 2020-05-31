@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 
 import Content from "../../../components/Content";
 import RestaurantItem from "../../../components/RestaurantItem";
-import LastItem from "../../../components/LastItem";
+import ListFooter from "../../../components/ListFooter";
 import Swiper from "../../../components/Swiper";
 
 import { Container } from "./styles";
@@ -79,7 +79,20 @@ const Home: React.FC = () => {
 						showsHorizontalScrollIndicator={false}
 						keyExtractor={(item) => item.id.toString()}
 						renderItem={({ item }) => <RestaurantItem data={item} />}
-						ListFooterComponent={() => <LastItem />}
+						ListFooterComponent={() => <ListFooter />}
+					/>
+				</Content>
+				<Content
+					title="Must Try Restaurants"
+					subtitle="Local restaurants people rave about"
+				>
+					<FlatList
+						data={restaurants}
+						horizontal
+						showsHorizontalScrollIndicator={false}
+						keyExtractor={(item) => item.id.toString()}
+						renderItem={({ item }) => <RestaurantItem data={item} />}
+						ListFooterComponent={() => <ListFooter />}
 					/>
 				</Content>
 			</ScrollView>
