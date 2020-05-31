@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 export const Container = styled.View`
 	width: 260px;
@@ -14,6 +15,12 @@ export const Header = styled.View`
 `;
 
 export const CoverImage = styled.Image``;
+
+export const IconFavorite = styled(FontAwesome)`
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+`;
 
 export const Content = styled.View``;
 
@@ -38,6 +45,7 @@ export const MiniBox = styled.View`
 	margin-top: 5px;
 	padding: 5px;
 	flex-direction: row;
+	align-items: center;
 `;
 
 export const TimeToDelivery = styled.Text`
@@ -48,9 +56,11 @@ export const TimeToDelivery = styled.Text`
 export const Rating = styled.Text`
 	color: #3b3b3d;
 	font-size: 12px;
+	margin-right: 3px;
 `;
 
 export const Votes = styled.Text`
 	color: #959595;
 	font-size: 12px;
+	margin-left: 3px;
 `;
