@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FlatList } from "react-native";
+import React, { useState, useCallback } from "react";
+import { FlatList, RefreshControl } from "react-native";
 
 import Content from "../../../components/Content";
 import RestaurantItem from "../../../components/RestaurantItem";
@@ -67,10 +67,27 @@ interface Restaurant {
 
 const Home: React.FC = () => {
 	const [restaurants, setRestaurants] = useState<Restaurant[]>(restaurantsData);
+	const [refreshing, setRefreshing] = useState<boolean>(false);
+
+	function wait(timeout: number) {
+		return new Promise((resolve) => {
+			setTimeout(resolve, timeout);
+		});
+	}
+
+	const onRefresh = useCallback(() => {
+		setRefreshing(true);
+
+		wait(2000).then(() => setRefreshing(false));
+	}, [refreshing]);
 
 	return (
 		<Container>
-			<ScrollView>
+			<ScrollView
+				refreshControl={
+					<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+				}
+			>
 				<Swiper />
 				<Content title="Special Offers" subtitle="Limited availability">
 					<FlatList
@@ -95,6 +112,9 @@ const Home: React.FC = () => {
 						ListFooterComponent={() => <ListFooter />}
 					/>
 				</Content>
+				{restaurantsData.map((item, i) => (
+					<RestaurantItem data={item} key={i} isFlatList={false} />
+				))}
 			</ScrollView>
 		</Container>
 	);
