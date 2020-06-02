@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 import {
@@ -18,6 +19,7 @@ import {
 
 interface RestaurantItemProps {
 	data: Restaurant;
+	isFlatList?: boolean;
 }
 
 interface Restaurant {
@@ -25,17 +27,16 @@ interface Restaurant {
 	name: string;
 }
 
-const RestaurantItem: React.FC<RestaurantItemProps> = ({
-	data: { name, id },
-}) => {
+const RestaurantItem: React.FC<RestaurantItemProps> = ({ isFlatList }) => {
 	const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
 	const handleFavorite = () => {
 		setIsFavorite(!isFavorite);
 	};
 
+	console.tron.log("isFlatlist");
 	return (
-		<Container>
+		<Container isFlatList={isFlatList}>
 			<Header>
 				{/* <CoverImage /> */}
 				<IconFavorite
@@ -61,6 +62,10 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({
 			</Content>
 		</Container>
 	);
+};
+
+RestaurantItem.defaultProps = {
+	isFlatList: true,
 };
 
 export default RestaurantItem;

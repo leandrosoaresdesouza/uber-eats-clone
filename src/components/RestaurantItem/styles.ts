@@ -1,10 +1,14 @@
 import styled from "styled-components/native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
+interface RestaurantItemProps {
+	isFlatList?: boolean;
+}
+
 export const Container = styled.View`
-	width: 260px;
+	width: ${(props: RestaurantItemProps) => (props.isFlatList ? "260" : "100%")};
 	background-color: #fff;
-	padding: 7px;
+	padding: 10px;
 	margin-right: 10px;
 	margin-top: 10px;
 `;

@@ -10,16 +10,16 @@ const Swiper: React.FC = () => {
 			dotColor="rgba(255, 255, 255, 0.6)"
 			activeDotColor="#fff"
 		>
-			<View>
+			<View style={{ height: 180, width: 100 }}>
 				<Text>a</Text>
 			</View>
-			<View>
+			<View style={{ height: 180, width: 100 }}>
 				<Text>b</Text>
 			</View>
-			<View>
+			<View style={{ height: 180, width: 100 }}>
 				<Text>c</Text>
 			</View>
-			<View>
+			<View style={{ height: 180, width: 100 }}>
 				<Text>d</Text>
 			</View>
 		</Container>
