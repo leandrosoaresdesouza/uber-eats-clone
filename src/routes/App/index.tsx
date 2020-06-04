@@ -7,8 +7,8 @@ import Octicons from "react-native-vector-icons/Octicons";
 
 import Home from "../../pages/App/Home";
 import Search from "../../pages/App/Search";
-import Orders from "../../pages/App/Orders";
 import Account from "../../pages/App/Account";
+import TopTabOrders from "./TopTabOrders";
 
 interface IconsGroup {
 	[key: string]: Icon;
@@ -63,7 +63,7 @@ const AppTab: React.FC = () => {
 			/>
 			<Tab.Screen
 				name="Orders"
-				component={Orders}
+				component={TopTabOrders}
 				options={{ title: "Orders" }}
 			/>
 			<Tab.Screen

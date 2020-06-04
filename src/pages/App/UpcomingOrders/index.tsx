@@ -3,12 +3,12 @@ import { Text } from "react-native";
 
 import { Container } from "./styles";
 
-const Orders: React.FC = () => {
+const UpcomingOrders: React.FC = () => {
 	return (
 		<Container>
-			<Text>Orders</Text>
+			<Text>UpcomingOrders</Text>
 		</Container>
 	);
 };
 
-export default Orders;
+export default UpcomingOrders;

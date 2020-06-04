@@ -24,12 +24,6 @@ const SignIn: React.FC = () => {
 		navigation.navigate("SignUp", user);
 	};
 
-	useEffect(() => {
-		// console.tron.log("navigation", navigation);
-		// console.tron.log("route", route);
-		console.tron.log("entrou aqui");
-	}, []);
-
 	return (
 		<Container>
 			<Text>SignIn</Text>

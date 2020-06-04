@@ -34,7 +34,6 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ isFlatList }) => {
 		setIsFavorite(!isFavorite);
 	};
 
-	console.tron.log("isFlatlist");
 	return (
 		<Container isFlatList={isFlatList}>
 			<Header>
