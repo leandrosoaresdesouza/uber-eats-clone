@@ -13,14 +13,14 @@ import { store, persistor } from "./store";
 
 const App: React.FC = () => {
 	return (
-		<Provider store={store}>
-			<PersistGate persistor={persistor}>
-				<NavigationContainer>
-					<StatusBar barStyle="dark-content" backgroundColor="#fff" />
-					<Routes />
-				</NavigationContainer>
-			</PersistGate>
-		</Provider>
+		// <Provider store={store}>
+		// <PersistGate persistor={persistor}>
+		<NavigationContainer>
+			<StatusBar barStyle="dark-content" backgroundColor="#fff" />
+			<Routes />
+		</NavigationContainer>
+		// </PersistGate>
+		// </Provider>
 	);
 };
 
